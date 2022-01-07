@@ -1,10 +1,15 @@
 class ProductsController < ApplicationController
 
-  def index
+  def landing
     @products = Product.all
     @usa = Product.usa
     @threecent = Product.three_most_recent
     @popular = Product.most_reviews.first
+    render :landing
+  end
+
+  def index
+    @products = Product.all
     render :index
   end
 

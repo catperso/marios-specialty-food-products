@@ -1,0 +1,25 @@
+<p>Welcome to Super Mario's Super Website for his Super Foods! Here's a few noteworthy products we offer!</p>
+
+<h2>Most Reviewed Product: <strong><em><%= link_to @popular.name, product_path(@popular) %></em></strong> with <%= @popular.reviews.length %> reviews!</h2>
+
+<h3>Most Recent Products</h3>
+<% if @threecent.any? %>
+  <ul>
+    <% @threecent.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %> - <em><%= product.created_at %></em></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<h2>Local Products Made in the USA</h2>
+<% if @usa.any? %>
+  <ul>
+    <% @usa.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+<% end %>
+<hr>
+<%= link_to "View all products", products_path, :class => "btn btn-success" %>
+<br>
+<%= image_tag("mario.png") %>
