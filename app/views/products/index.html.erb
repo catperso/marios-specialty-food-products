@@ -10,4 +10,4 @@
   <p>There are no products yet.</p>
 <% end %>
 
-<button class="btn btn-info"><%= link_to "Add new product", new_product_path %></button>
+<%= button_to "Add new product", new_product_path, :class => "btn btn-info", :method => :get %>

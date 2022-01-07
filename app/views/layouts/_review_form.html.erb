@@ -7,5 +7,5 @@
   <%= f.text_area :content_body %>
   <%= f.label :rating %>
   <%= f.number_field :rating, in: 1..5 %>
-  <%= f.submit %>
+  <%= f.submit 'Submit!', :class => "btn btn-success" %>
 <% end %>
