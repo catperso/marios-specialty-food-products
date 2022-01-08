@@ -20,50 +20,34 @@ _A sample MVP for displaying Mario's products and reviews of them._
 * _PostgreSQL_
 * _Shoulda Matchers_
 * _[Faker](https://github.com/faker-ruby/faker)_
+* _Active Record_
 
 ## Using this app with Ruby 2.6.5 installed natively (no Docker)
 
+* _Run_ `git clone https://github.com/catperso/marios-specialty-food-products` _in your terminal to clone this repository to your device, then navigate to the project directory._
+* _Run_ `bundle install` _to package the Gems and set up Gemfile.lock._
+* _Run_ `rake db:setup` _to set up the databases, tables, and seed them with placeholder entries._
+* _Run_ `rspec` _if you want to run the model and Capybara integration specs._
+* _Run_ `rails s` _to start a local server._
+* _Open up your web browser and go to_ `http://localhost:3000` _while the server is running to experience the project._
 
+## Using this app with Docker
 
+* _First make sure Docker is installed as per the official [instructions](https://docs.docker.com/get-docker/)._
+* _Run_ `docker pull ruby:2.6.5` _to pull an image for the same version of Ruby this project was built with._
+* _Run_ `git clone https://github.com/catperso/marios-specialty-food-products` _in your terminal to clone this repository to your device, then navigate to the project directory._
+* _Run_ `docker-compose run web bundle install` _to bundle the gems and set up Gemfile.lock._
+* _Run_ `docker-compose run web sh` _to start a shell inside the container._
+* _Run_ `rake db:setup` _in the container shell to set up the databases, tables, and seed them with placeholder entries._
+* _Run_ `rspec` _in the container shell if you want to run the model and Capybara integration specs._
+* _In your normal terminal, run_ `docker-compose up --build` _to bundle the app and start up the database and server containers properly attached to eachother._
+* _Open up your web browser and go to_ `http://localhost:3000` _while the server is running to experience the project._
 
+## Known Bugs
+* _None so far._
 
+## License - [MIT](https://opensource.org/licenses/MIT)
 
+_If you run into any problems/bugs feel free to send me an email [(mc.casperson@gmail.com)](mailto:mc.casperson@gmail.com) with details._
 
-## Description
-
-This is a basic scaffolded Rails project using Docker with Ruby 2.6.5, Rails 5.2.4, and Postgres 12.1. This project can be used in lieu of installing Ruby, Rails and Postgres on your machine. When you run `docker-compose up`, Docker will create two containers on your machine: a Ruby/Rails environment running the local server and a Postgres container where your database is stored.
-
-### Running Rails and Postgres Servers
-
-* Run `docker-compose up` to run the local server at `localhost:3000`. However, if you go to `localhost:3000`, you will see the DB is not set up yet.
-
-### Running Shell Commands
-
-To access a shell environment to run `rails c`, run migrations, or run other `rake` and `rails` tasks such as `rails routes`, you'll need to do the following.
-
-Run the following command in the root directory of the project:
-
-```
-$ docker-compose run web sh
-```
-
-It's not necessary for the containers to be running (with `$ docker-compose up`).
-
-This will open a shell where you can run any commands in the web application's environment. This includes the following commands:
-
-* `$ bundle exec rake db:create` (and any other Rake commands)
-* `$ rails routes` and `$ rails c` (as well as any other Rails commands)
-* `$ bundle exec rspec` (to run tests)
-* `$ irb` (if you just need a basic Ruby REPL)
-
-### What if I want to add more gems to my project?
-
-You'll need to complete the following steps:
-
-* First, add the gems to the project.
-
-* Run `docker-compose run web bundle install`. This will bundle the new gems.
-
-* Next, run `docker-compose up --build`. This will rebuild the project.
-
-To read Docker's documentation on running projects using Ruby and Rails, see [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails/).
+Copyright (c) _2022_ _Matt C._
