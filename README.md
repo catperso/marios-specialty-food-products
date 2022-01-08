@@ -1,3 +1,34 @@
+# _Super Mario's Super Foods!_
+
+#### By _**Matt C.**_
+
+#### _Epicodus' Ruby code review #4 on databases with Rails_
+
+## Description
+_A sample MVP for displaying Mario's products and reviews of them._
+
+## Database Schema
+![Super Mario Database Schema](app\assets\images\schema.png "Schema")
+
+## Technologies Used
+* _Ruby_
+* _rspec_
+* _pry_
+* _[Docker](https://www.docker.com/)(optional)_
+* _Rails_
+* _Capybara_
+* _PostgreSQL_
+* _Shoulda Matchers_
+* _[Faker](https://github.com/faker-ruby/faker)_
+
+## Using this app with Ruby 2.6.5 installed natively (no Docker)
+
+
+
+
+
+
+
 ## Description
 
 This is a basic scaffolded Rails project using Docker with Ruby 2.6.5, Rails 5.2.4, and Postgres 12.1. This project can be used in lieu of installing Ruby, Rails and Postgres on your machine. When you run `docker-compose up`, Docker will create two containers on your machine: a Ruby/Rails environment running the local server and a Postgres container where your database is stored.
