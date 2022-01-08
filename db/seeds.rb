@@ -16,3 +16,6 @@ Review.destroy_all
     Review.create!(author: Faker::JapaneseMedia::OnePiece.character, content_body: Faker::Lorem.sentence(word_count: 20), rating: Faker::Number.within(range: 1..5), product_id: product.id)
   end
 end
+
+p "Created #{Product.count} products!"
+p "Created #{Review.count} reviews!"

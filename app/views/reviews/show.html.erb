@@ -7,3 +7,6 @@
                                                                 :data => {:confirm => "Are you sure?",
                                                                           :method => "delete"} %>
 <%= link_to "Return to the product", product_path(@product), :class => "btn btn-info" %>
+<% if @review.author == "Rick Astley" %>
+<%= link_to "You should know better...", "http://bitly.com/98K8eH", :class => "btn" %>
+<% end %>
