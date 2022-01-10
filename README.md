@@ -8,7 +8,7 @@
 _A sample MVP for displaying Mario's products and reviews of them._
 
 ## Database Schema
-![Super Mario Database Schema](app\assets\images\schema.png)
+![Super Mario Database Schema](app/assets/images/schema.png)
 
 ## Technologies Used
 * _Ruby_
