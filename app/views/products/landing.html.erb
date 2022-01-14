@@ -2,7 +2,9 @@
 
 <%= link_to "View all products", products_path, :class => "btn btn-success" %>
 
-<h2>Most Reviewed Product: <strong><em><%= link_to @popular.name, product_path(@popular) %></em></strong> with <%= @popular.reviews.length %> reviews!</h2>
+<% if @popular.any? %>
+<h2>Most Reviewed Product: <strong><em><%= link_to @popular.first.name, product_path(@popular.first) %></em></strong> with <%= @popular.first.reviews.length %> reviews!</h2>
+<% end %>
 
 <h3>Most Recent Products</h3>
 <% if @threecent.any? %>

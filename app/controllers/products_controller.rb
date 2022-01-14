@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @usa = Product.usa
     @threecent = Product.three_most_recent
-    @popular = Product.most_reviews.first
+    @popular = Product.most_reviews
     render :landing
   end
 
