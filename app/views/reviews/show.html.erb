@@ -2,10 +2,12 @@
 <h3>Rating: <%= @review.rating %> out of 5</h3>
 <p><%= @review.content_body %></p>
 <hr>
-<%= link_to "Edit review", edit_product_review_path(@product, @review), :class => "btn btn-warning" %>
-<%= link_to "Delete this review", product_review_path(@product, @review), :class => "btn btn-danger", 
-                                                                :data => {:confirm => "Are you sure?",
-                                                                          :method => "delete"} %>
+<% if is_admin? %>
+  <%= link_to "Edit review", edit_product_review_path(@product, @review), :class => "btn btn-warning" %>
+  <%= link_to "Delete this review", product_review_path(@product, @review), :class => "btn btn-danger", 
+                                                                  :data => {:confirm => "Are you sure?",
+                                                                            :method => "delete"} %>
+<% end %>
 <%= link_to "Return to the product", product_path(@product), :class => "btn btn-info" %>
 <% if @review.author == "Rick Astley" %>
 <%= link_to "You should know better...", "http://bitly.com/98K8eH", :class => "btn" %>

@@ -10,4 +10,6 @@
   <p>There are no products yet.</p>
 <% end %>
 <hr>
-<%= link_to "Add new product", new_product_path, :class => "btn btn-primary" %>
+<% if is_admin? %>
+  <%= link_to "Add new product", new_product_path, :class => "btn btn-primary" %>
+<% end %>

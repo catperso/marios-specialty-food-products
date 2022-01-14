@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
 
   before_action :only => [:edit] do
-    flash[:alert] = "Only administrators can do that!"
     redirect_to new_user_session_path unless is_admin?
   end
 
