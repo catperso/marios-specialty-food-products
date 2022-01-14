@@ -1,5 +1,7 @@
 <h4>Welcome to Super Mario's Super Website for his Super Foods! Here's a few noteworthy products we offer!</h4>
 
+<%= link_to "View all products", products_path, :class => "btn btn-success" %>
+
 <h2>Most Reviewed Product: <strong><em><%= link_to @popular.name, product_path(@popular) %></em></strong> with <%= @popular.reviews.length %> reviews!</h2>
 
 <h3>Most Recent Products</h3>
@@ -20,6 +22,6 @@
   </ul>
 <% end %>
 <hr>
-<%= link_to "View all products", products_path, :class => "btn btn-success" %>
+<h4><em>Our glorious founder</em></h4>
 <br>
 <%= image_tag("mario.png") %>

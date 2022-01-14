@@ -22,14 +22,14 @@
       <% end %>
       <% if current_user %>
         <strong><%= current_user.email %></strong>
+        <% if is_admin? %>
+          <em> Administrative access granted! </em>
+        <% end %>
       <% end %>
     </div>
     <br>
     <div class="jumbotron">
       <h1><a href="/">Super Mario's Super Foods</a> <%= image_tag("chef.png") %></h1>
-      <% if is_admin? %>
-        <p> Administrative access granted! </p>
-      <% end %>
     </div>
     <%= flash[:alert] %>
     <%= flash[:notice] %>
