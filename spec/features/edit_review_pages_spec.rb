@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 describe "the Edit a Review process" do
+
+  before(:each) do
+    admin = User.create!(:email => 'Capy@Bara.com', :password => 'epicodus', :admin => true)
+    login_as(admin, :scope => :user)
+  end
+
   it "edits a review" do
     product = Product.create(name: "Mushroom Stew", cost: "69", country_of_origin: "USA")
     review = Review.create(author: "Luigi", content_body: "Now we can create integration testing files. Let's create a few examples to test CRUD functionality for adding albums", rating: '5', product_id: product.id)
