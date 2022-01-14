@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   before_action :only => [:new, :edit] do
+    flash[:alert] = "Only administrators can do that!"
     redirect_to new_user_session_path unless is_admin?
   end
 
