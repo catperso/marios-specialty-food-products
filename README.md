@@ -2,10 +2,10 @@
 
 #### By _**Matt C.**_
 
-#### _Epicodus' Ruby code review #4 on databases with Rails_
+#### _Epicodus' Ruby code review #4 on databases with Rails and user authentication and authorization with Devise._
 
 ## Description
-_A sample MVP for displaying Mario's products and reviews of them._
+_A sample MVP for displaying Mario's products and reviews of them. Now with user account functionality!_
 
 ## Database Schema
 ![Super Mario Database Schema](app/assets/images/schema.png)
@@ -19,8 +19,9 @@ _A sample MVP for displaying Mario's products and reviews of them._
 * _Capybara_
 * _PostgreSQL_
 * _Shoulda Matchers_
-* _[Faker](https://github.com/faker-ruby/faker)_
+* _Faker_
 * _Active Record_
+* _Devise_
 
 ## Using this app with Ruby 2.6.5 installed natively (no Docker)
 
@@ -30,6 +31,7 @@ _A sample MVP for displaying Mario's products and reviews of them._
 * _Run_ `rspec` _if you want to run the model and Capybara integration specs._
 * _Run_ `rails s` _to start a local server._
 * _Open up your web browser and go to_ `http://localhost:3000` _while the server is running to experience the project._
+* _See the **Testing Accounts** section for initial login information._
 
 ## Using this app with Docker
 
@@ -42,6 +44,10 @@ _A sample MVP for displaying Mario's products and reviews of them._
 * _Run_ `rspec` _in the container shell if you want to run the model and Capybara integration specs._
 * _In your normal terminal, run_ `docker-compose up --build` _to bundle the app and start up the database and server containers properly attached to eachother._
 * _Open up your web browser and go to_ `http://localhost:3000` _while the server is running to experience the project._
+* _See the **Testing Accounts** section for initial login information._
+
+## Testing Accounts
+_Seeding the databases also sets up the project with a user account and an admin account to test the various parts of the site. The email for the user (non-admin) is `user@epicodus.com`. The email for the admin is `admin@epicodus.com`. The password for each is `epicodus`._
 
 ## Known Bugs
 * _None so far._
