@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
   before_action :only => [:edit] do
-    redirect_to new_user_session_path unless is_admin?
+    flash[:alert] = "UNAUTHORIZED ACCESS: Please log-in with an admin account to access that resource."
+    redirect_to root_path unless is_admin?
   end
 
   def new
