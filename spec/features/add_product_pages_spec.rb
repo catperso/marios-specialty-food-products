@@ -23,4 +23,11 @@ describe "the Add A Product process" do
     click_on 'Submit!'
     expect(page).to have_content "Name can't be blank"
   end
+
+  it "gives an error when a non-admin user tries to access this" do
+    nonadmin = User.create!(:email => 'Bappy@cara.com', :password => 'epicodus')
+    login_as(nonadmin, :scope => :user)
+    visit new_product_path
+    expect(page).to have_content 'UNAUTHORIZED ACCESS: Please log-in with an admin account to access that resource.'
+  end
 end

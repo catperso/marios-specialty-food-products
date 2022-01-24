@@ -16,4 +16,21 @@ describe "the Edit a Product process" do
     expect(page).to have_content "Toad Scramble"
     expect(page).to have_no_content "Mushroom Stew"
   end
+
+  it "gives an error if one of the product fields is blank" do
+    product = Product.create(name: "Mushroom Stew", cost: "69", country_of_origin: "USA")
+    visit edit_product_path(product)
+    fill_in 'Cost', :with => ''
+    click_on 'Submit!'
+    expect(page).to have_content "Errors detected! Please resolve the issues and try again."
+    expect(page).to have_content "Cost can't be blank"
+  end
+
+  it "gives an error when a non-admin user tries to access this" do
+    nonadmin = User.create!(:email => 'Bappy@cara.com', :password => 'epicodus')
+    login_as(nonadmin, :scope => :user)
+    product = Product.create(name: "Mushroom Stew", cost: "69", country_of_origin: "USA")
+    visit edit_product_path(product)
+    expect(page).to have_content 'UNAUTHORIZED ACCESS: Please log-in with an admin account to access that resource.'
+  end
 end
