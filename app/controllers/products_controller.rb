@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  before_action :only => [:new, :edit] do
+  before_action :only => [:new, :edit, :create, :update, :destroy] do
     flash[:alert] = "UNAUTHORIZED ACCESS: Please log-in with an admin account to access that resource." unless is_admin?
     redirect_to root_path unless is_admin?
   end
